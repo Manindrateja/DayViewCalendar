@@ -1,0 +1,70 @@
+.container {
+	min-height: 100vh;
+	padding: 20px;
+	.hours {
+		width: 100%;
+		.hour{
+			display: flex;
+			height: 60px;
+			.label {
+				width: 50px;
+				text-align: right;
+			    padding-right: 10px;
+			    margin-top: -10px;
+			    font-size: 1rem;
+			}
+			.tasks {
+				flex: auto;
+				// border-top: 1px solid #ccc;
+				border-left: 1px solid #ccc;
+				.divider {
+					border-bottom: 1px solid #ccc;
+					margin-left: -10px;
+				}
+				.list {
+					display: flex;
+					.task {
+						background: #bada55;
+						background: rgba(186, 218, 85, 0.7);
+						border-radius: 5px;
+						flex: auto;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin: 1px;
+						cursor: pointer;
+						z-index: 1;
+						text-transform: capitalize;
+						&:hover{
+							background: rgba(186, 218, 85, 0.9);
+						}
+					}
+				}
+			}
+			// &:last-child {
+			// 	.tasks{
+			// 		position: relative;
+			// 		.divider {
+			// 			&:last-child {
+			// 				position: absolute;
+			// 				bottom: 0px;
+			// 			}
+			// 		}
+			// 	}
+			// }
+		}
+	}
+	.actions {
+		text-align: right;
+		button {
+			margin: 5px 20px;
+		}
+	}
+	
+}
+
+.task {
+	&:hover {
+		background: rgba(186, 218, 85, 0.9);
+	}
+}

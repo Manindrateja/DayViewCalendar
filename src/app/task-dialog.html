@@ -1,0 +1,28 @@
+<form [formGroup]="taskForm">
+	<h1 mat-dialog-title>{{task?.label || 'New Task'}}</h1>
+	<div mat-dialog-content>
+		<mat-form-field  [floatLabel]="always" >
+			<mat-label>Label</mat-label>
+			<input matInput name="label" placeholder="Task Name" formControlName="label">
+		</mat-form-field>
+		<div class="times">
+			<div class="time">
+				<mat-form-field  [floatLabel]="always" >
+					<mat-label>Start Time</mat-label>
+					<input matInput placeholder="Start time" type="time" [max]="'23:45'" formControlName="startTime">
+				</mat-form-field>
+			</div>
+			<div class="time">
+				<mat-form-field  [floatLabel]="always" >
+					<mat-label>End Time</mat-label>
+					<input matInput placeholder="End time" type="time" [max]="'23:59'" formControlName="endTime">
+					<mat-error>Endtime must be greater than StartTime</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div mat-dialog-actions class="actions">
+		<button mat-button type="button" (click)="onNoClick()">Cancel</button>
+		<button  mat-raised-button color="primary" (click)="saveTask()" cdkFocusInitial [disabled]="!taskForm.valid">Save</button>
+	</div>
+</form>
